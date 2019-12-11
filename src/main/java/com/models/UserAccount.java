@@ -3,16 +3,19 @@ package com.models;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Currency;
 import java.util.List;
 
 public class UserAccount {
     private String userName;
     private int accountNumber;
     private BigDecimal balance;
+    private Currency currency;
     private List<Operation> operations;
 
     public UserAccount(){
         operations = new ArrayList<>();
+        balance = new BigDecimal(0);
     }
     public String getUserName() {
         return userName;
@@ -40,6 +43,14 @@ public class UserAccount {
 
     public List<Operation> getOperations() {
         return operations;
+    }
+
+    public Currency getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(Currency currency) {
+        this.currency = currency;
     }
 
     public void setOperations(List<Operation> operations) {
